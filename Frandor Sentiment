@@ -1,0 +1,49 @@
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
+lansingFrandor = "One of the biggest ideas thats been shared is Frandor Mall. You know it — you’ve been there. You’ve told yourself youd never go back; yet youve found yourself navigating that treacherous parking lot — time and time again. You remember Frandor because a lot of the time it feels like a video game miniboss, Terrill said. It is something to be conquered or persevere over and over, so you can just get on with your quest. Ive also sort of decided that Frandor is just the physical manifestation of Lansings municipal anxiety. That, to me, might explain why it is so memorable. Is this what we really are?, If this week has been Too Much consider using a Lansing Facts Recommended Cry Zone, such as Frandor parking lot, Biggby restroom (any location), Woldumar Nature Center. Or really just cry wherever because feeling things is human and not a weakness. It is like a retail wasteland, said Terrill, an east side resident. You dont go to Frandor. You end up in Frandor. Terrill helps run Lansing Facts, a satirical Twitter account that traffics in hyper-local references. Frandor is a frequent target of the accounts affectionate derision. Everybody in Lansing goes to Frandor, but everybody dunks on Frandor, said Terrill, a state employee who describes himself as an armchair urban planner. Wasnt there a seasonal holiday store called Giant Pile of Dirty Snow and Mangled Grocery Carts? employees at the frandor speedway are just people who got never made it out of the frandor parking lot. i have a joke about driving around Frandor but its overly complicated. maybe in the frandor parking lot? that way it could be one part social, three part hunger games. im extremely blessed to have grown up in groesbeck. would not wish having to learn frandor roads on the fly on even my most hated nemesis. maybe the real folk festival was the friends we lost in the frandor underground. can anyone tell me why i just saw a tractor rise mysteriously above the frandor skyline from the mcDonalds parking lot? i get 2020 and spooky season, but this is going too far. reporting from mount frandor - the citizens have sacrificed their carts to the rising peaks of our suburban winter wonder. frandor is a nightmare but its our nightmare. what will happen once sears moves out of frandor? wrong answers only. a therapist who specializes in treating frandor related ptsd. frandor welcome and reunification center for souls lost in frandor). and with the first snowfall a new mount frandor comes into existence, almost in earnest. this is what microsoft flight simulator 2020 thinks frandor looks like and while it may not be that correct, its still a fine place to cry."
+tokens = word_tokenize(lansingFrandor)
+
+stop_words = set(stopwords.words('english')) 
+
+tokens2 = [token.lower() for token in tokens]
+
+filtered_sentence = [w for w in tokens2 if not w in stop_words] 
+  
+print(filtered_sentence) 
+
+fqlist = nltk.FreqDist(filtered_sentence)
+topwords = fqlist.most_common(30)
+for word, freq in topwords:
+    print(word, freq)
+
+
+Output = 
+"." 29
+frandor 24
+"," 18
+lot 6
+parking 5
+"?" 5
+terrill 4
+time 3
+like 3
+said 3
+lansing 3
+cry 3
+one 2
+"—" 2
+"’" 2
+never 2
+go 2
+get 2
+really 2
+facts 2
+center 2
+everybody 2
+carts 2
+maybe 2
+part 2
+lost 2
+2020 2
+mount 2
+nightmare 2
